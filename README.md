@@ -104,7 +104,7 @@ sqlplus sys/oracle@//localhost:1521 as sysdba
 ```
 
 ```
-   alter system set db_recovery_file_dest_size = 30G;
+   alter system set db_recovery_file_dest_size = 100G;
    alter system set db_recovery_file_dest = '/u01/app/oracle/oradata/recovery_area' scope=spfile;
    shutdown immediate;
    connect sys/oracle as sysdba;
