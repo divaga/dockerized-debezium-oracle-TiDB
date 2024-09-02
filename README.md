@@ -180,6 +180,7 @@ VALUES (4, 'Anne', 'Kretchmar', 'annek@noanswer.org');
 ## 2. Prepare Debizium Connect for CDC
 
 **Step 1: Install the Required Drivers**
+
 Go to Debezium bash terminal
 
 ```
@@ -194,6 +195,7 @@ curl https://repo1.maven.org/maven2/com/oracle/database/xml/xdb/21.6.0.0/xdb-21.
 ```
 
 **Step 2: Setup the Instant Client Tool**
+
 Instant Client is used to Connect to Talk with Oracle db and XStream Api
 
 `Change the Directory to : cd /kafka/external_libs`
