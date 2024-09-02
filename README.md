@@ -240,6 +240,8 @@ tar xvfz  debezium-connector-jdbc-2.5.0.Final-plugin.tar.gz
     "database.history.kafka.topic": "history",
     "database.dbname": "XE",
     "database.connection.adapter": "LogMiner",
+    "database.history.store.only.captured.tables.ddl":"true",
+    "schema.history.internal.store.only.captured.databases.ddl":"true",
     "database.history.kafka.bootstrap.servers": "kafka:9092",
     "table.include.list": "DEBEZIUM.CUSTOMERS",
     "database.schema": "DEBEZIUM",
