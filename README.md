@@ -198,7 +198,7 @@ curl https://repo1.maven.org/maven2/com/oracle/database/xml/xdb/21.6.0.0/xdb-21.
 
 Instant Client is used to Connect to Talk with Oracle db and XStream Api
 
-`Change the Directory to : cd /kafka/external_libs`
+> Change the Directory to : cd /kafka/external_libs`
 
 ```bash
 curl "https://download.oracle.com/otn_software/linux/instantclient/19600/instantclient-basiclite-linux.x64-19.6.0.0.0dbru.zip" -O /tmp/ic.zip
@@ -207,7 +207,7 @@ unzip instantclient-basiclite-linux.x64-19.6.0.0.0dbru.zip
 
 **Step 3: Setup the Debizium JDBC Sink Plugins for MySQL**
 
-`Change the Directory to : cd connect`
+> Change the Directory to : cd connect
 
 ```shell
 curl https://repo1.maven.org/maven2/io/debezium/debezium-connector-jdbc/2.5.0.Final/debezium-connector-jdbc-2.5.0.Final-plugin.tar.gz -O /tmp/ic.zip
@@ -267,7 +267,7 @@ jq '. | to_entries[] | [ .value.info.type, .key, .value.status.connector.state,.
 column -s : -t| sed 's/\"//g'| sort
 ```
 
-`The Output Should be like this `
+> The Output Should be like this
 
 ```text
 source | oracle-11 | RUNNING | RUNNING | io.debezium.connector.oracle.OracleConnector
@@ -275,13 +275,14 @@ source | oracle-11 | RUNNING | RUNNING | io.debezium.connector.oracle.OracleConn
 
 **Step 2: Listen the Topic and Read Message messages**
 
-`Create docker network and attach it to kafka container`
+> Create docker network and attach it to kafka container
+
 ```shell
 sudo docker network create my-network
 sudo docker network connect my-network kafka
 ```
 
-`Access Terminal and paste this command`
+> Access Terminal and paste this command
 
 ```shell
 docker run --tty --network resources_default confluentinc/cp-kafkacat kafkacat -b kafka:9092 -C -s key=s -s value=avro -r http:/schema-registry:8081 -t test.DEBEZIUM.CUSTOMERS
@@ -336,7 +337,7 @@ _Now check the changes in the terminal where we are listening ou TOPIC_
 
 **Step 1: Create a Sink request using this payload**
 
-`Create tidb.json`
+> Create tidb.json
 
 ```json
 {
@@ -366,12 +367,12 @@ _Now check the changes in the terminal where we are listening ou TOPIC_
 curl -vX POST http://localhost:8083/connectors -d @tidb.json --header "Content-Type: application/json"
 ```
 
-To Delete Connector:
+> To Delete Connector:
 ```
 curl -i -X DELETE localhost:8083/connectors/tidb-sink/
 ```
 
-To See the Status:
+> To See the Status:
 
 ```
 curl  https://localhost:8083/connectors/tidb-sink/status -k   | jq
@@ -393,7 +394,7 @@ sink   | tidb-sink        | RUNNING | RUNNING | io.debezium.connector.oracle.Ora
 ```
 
 
-`2. Check the Tables in TiDB by using \td`
+> 2. Check the Tables in TiDB
 
 ```sql
 SELECT *
