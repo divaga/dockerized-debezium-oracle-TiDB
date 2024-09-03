@@ -99,7 +99,7 @@ INSERT INTO customers
   VALUES (NULL,'Anne','Kretchmar','annek@noanswer.org');
 ```
 
-## 2. Prepare Debizium Connect for CDC
+## 3. Prepare Debizium Connect for CDC
 
 Go to Debezium bash terminal (change "connect" with your container name)
 
@@ -122,7 +122,7 @@ tar xvfz  debezium-connector-jdbc-2.5.0.Final-plugin.tar.gz
 
 ---
 
-## 3. Create Connector for Testing
+## 4. Create Connector for Testing
 
 > Create a Oracle Source Connector
 
@@ -180,7 +180,7 @@ sudo /usr/local/bin/docker-compose -f compose.yaml exec kafka /kafka/bin/kafka-c
 ```
 
 
-## 4.Verify the Changes (CDC)
+## 5.Verify the Changes (CDC)
 
 **Step 1: Perform Some Changes on Oracle DB**
 
@@ -195,7 +195,7 @@ Now check the changes in the terminal where we are listening on Kafka topic
 
 ---
 
-## 5. Create a TiDB Connector as a Sink
+## 6. Create a TiDB Connector as a Sink
 
 
 **Step 1: Create a Sink request using this payload**
