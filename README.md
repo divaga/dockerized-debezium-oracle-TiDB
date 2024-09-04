@@ -75,7 +75,7 @@ Run following scripts (please adjust SYS password and CDB/PDB name)
 
 
 ```bash
-sqlplus debezium/dbz@//localhost:1521
+sqlplus debezium/dbz@//localhost:1521/ORCLPDB1
 ```
 
 ```
