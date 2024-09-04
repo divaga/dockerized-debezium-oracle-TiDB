@@ -59,7 +59,7 @@ sqlplus sys/oracle@//localhost:1521/XE as sysdba <<- EOF
 EOF
 
 sqlplus sys/oracle@//localhost:1521/XE as sysdba <<- EOF
-  CREATE USER debezium IDENTIFIED BY dbz;
+  CREATE USER debezium IDENTIFIED BY dbz DEFAULT TABLESPACE USERS;
   GRANT CONNECT TO debezium;
   GRANT CREATE SESSION TO debezium;
   GRANT CREATE TABLE TO debezium;
