@@ -47,7 +47,7 @@ services:
 
 2. **Start:**
 
-   Run the following command
+   Create context folder (debezium-with-oracle-jdbc) in same location with this compose.yaml with its Dockerfile inside and run the following command
    ```bash
    sudo docker-compose up
    ```
