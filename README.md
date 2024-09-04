@@ -65,7 +65,7 @@ mkdir -p recovery_area
 
 **Step 2: Setup Log Miner**
 
-Run following scripts
+Run following scripts (please adjust SYS password and CDB/PDB name)
 
 ```bash
 ./setup-logminer.sh
