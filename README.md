@@ -3,7 +3,21 @@
 ---
 ## 1. Prepare Docker Environments
 
-1. **Create compose.yaml:**
+2. **Install Docker and Docker Compose:**
+
+```
+dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+dnf install docker-ce -y
+
+systemctl start docker
+systemctl enable docker
+
+dnf install -y curl
+curl -L https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+```
+
+2. **Create compose.yaml:**
 
 ```yml
 version: '2'
@@ -45,7 +59,7 @@ services:
      - JAVA_DEBUG_PORT=0.0.0.0:5005
 ```
 
-2. **Start:**
+3. **Start:**
 
    Create context folder (debezium-with-oracle-jdbc) in same location with this compose.yaml with its Dockerfile inside and run the following command
    ```bash
