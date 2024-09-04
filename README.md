@@ -109,7 +109,8 @@ sudo docker exec -it connect bash
 
 **Step 1: Setup the Debezium JDBC Sink Plugins for MySQL**
 
-> Change the Directory to : cd connect
+> Change the Directory to connect:
+`cd connect`
 
 ```shell
 curl https://repo1.maven.org/maven2/io/debezium/debezium-connector-jdbc/2.5.0.Final/debezium-connector-jdbc-2.5.0.Final-plugin.tar.gz -O /tmp/ic.zip
@@ -119,6 +120,7 @@ tar xvfz  debezium-connector-jdbc-2.5.0.Final-plugin.tar.gz
 **Step 2: Restart the Debezium Connector**
 > Note: Use Docker to Restart the connector Service
 
+`sudo docker restart <container-name>`
 
 ---
 
@@ -184,7 +186,7 @@ sudo /usr/local/bin/docker-compose -f compose.yaml exec kafka /kafka/bin/kafka-c
 
 **Step 1: Perform Some Changes on Oracle DB**
 
-`INSERT: `
+> INSERT:
 
 ```oracle
 INSERT INTO CUSTOMERS
@@ -229,16 +231,18 @@ Now check the changes in the terminal where we are listening on Kafka topic
 curl -vX POST http://localhost:8083/connectors -d @tidb-sink.json --header "Content-Type: application/json"
 ```
 
-
-> To Delete Connector:
-```
-curl -i -X DELETE localhost:8083/connectors/tidb-sink/
-```
-
 > To See the Status:
 
 ```
 curl  https://localhost:8083/connectors/tidb-sink/status -k   | jq
+
+```
+
+
+
+> To Delete Connector (If needed):
+```
+curl -i -X DELETE localhost:8083/connectors/tidb-sink/
 ```
 
 **Step 2: Check all the connectors are working**
