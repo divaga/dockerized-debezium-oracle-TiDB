@@ -3,7 +3,7 @@
 ---
 ## 1. Prepare Docker Environments
 
-2. **Install Docker and Docker Compose:**
+1. **Install Docker and Docker Compose:**
 
 ```
 dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
